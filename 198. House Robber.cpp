@@ -1,60 +1,88 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
-
-class Solution {
-public:  
-    int findans1(int i,vector<int> &v){
-        if(i >= v.size()) return 0; 
-        return max(findans1(i+1,v),findans1(i+2,v) + v[i]);
-    }
-    int findans2(int i,vector<int> &v,vector<int> &dp){
-        if(i >= v.size())return 0;
-        if(dp[i] != -1)return dp[i];
-        int l = findans2(i+1,v,dp);
-        int r = findans2(i+2,v,dp) + v[i];
-        return dp[i] = max(l,r);
-    }
-    int findans3(int n,vector<int> &v,vector<int> &dp){
-        if(n == 0){
+// ----------------------------------  1  ---------------------------------------------
+class Solution1_pure_recursion
+{ // tc -> (2^n) sc -> o(n) {stack space}
+public:
+    int findans(vector<int> &v, int n)
+    {
+        if (n == 0)
+        {
             return v[0];
         }
+        if (n < 0)
+            return 0;
+        int left = v[n] + findans(v, n - 2);
+        int right = findans(v, n - 1);
+        return max(left, right);
+    }
+    int rob(vector<int> &v)
+    {
+        int ans = findans(v, v.size() - 1);
+        return ans;
+    }
+};
+// ----------------------------------  2  ---------------------------------------------
+class Solution2_memoization
+{ // tc -> (n) sc -> o(n) + o(n) {stack space + dp vector space}
+public:
+    int findans(vector<int> &v, int n, vector<int> &dp)
+    {
+        if (n == 0)
+        {
+            return v[0];
+        }
+        if (n < 0)
+            return 0;
+        if (dp[n] != -1)
+            return dp[n];
+        int left = v[n] + findans(v, n - 2, dp);
+        int right = findans(v, n - 1, dp);
+        return dp[n] = max(left, right);
+    }
+    int rob(vector<int> &v)
+    {
+        vector<int> dp(v.size(), -1);
+        return findans(v, v.size() - 1, dp);
+    }
+};
+// ----------------------------------  3  ---------------------------------------------
+class Solution3_tabular
+{ // tc -> (n) sc -> o(n) {dp vector space}
+public:
+    int rob(vector<int> &v)
+    {
+        vector<int> dp(v.size(), -1);
         dp[0] = v[0];
-        dp[1] = max(v[0],v[1]);
-        for(int i=2;i<=n;i++){
-            dp[i] = max(dp[i-1],dp[i-2]+v[i]);
+        for (int i = 1; i < v.size(); i++)
+        {
+            int left = v[i];
+            if (i > 1)
+                left += dp[i - 2];
+            int right = dp[i - 1];
+            dp[i] = max(left, right);
         }
-        return dp[n];
+        return dp[v.size() - 1];
     }
-    int findans4(int n,vector<int> &v){
-        if(n == 0){
-            return v[0];
-        }
-        int prepre = v[0];
-        int pre = max(v[0],v[1]);
-        for(int i=2;i<=n;i++){
-            int ctr = max(pre,prepre+v[i]);
-            prepre = pre;
-            pre = ctr;
+};
+// ----------------------------------  4  ---------------------------------------------
+class Solution4_space_optimized
+{ // tc -> (n) sc -> o(1) 
+public:
+    int rob(vector<int> &v)
+    {
+        int pre = v[0];
+        int pre2 = -1;
+        for (int i = 1; i < v.size(); i++)
+        {
+            int left = v[i];
+            if (i > 1)
+                left += pre2;
+            int right = pre;
+            int ctrMAX = max(left, right);
+            pre2 = pre;
+            pre = ctrMAX;
         }
         return pre;
     }
-    int rob(vector<int>& v) { 
-        // return findans1(0,v);             worst solution pure recursion
-
-        // vector<int> dp(v.size()+1,-1);
-        // return findans2(0,v,dp);     dp -> top-down [ tc -> O(n)  sc -> O(n) + O(n)]
-
-        // vector<int> dp(v.size()+1,-1);
-        // return findans3(v.size()-1,v,dp);   //  dp -> bottom-up [ tc -> O(n)  sc -> O(n) ]
-
-        return findans4(v.size()-1,v);   // best   tc -> O(n)   sc -> O(1)
-    }
 };
-
-
-
-int main(){
-
-return 0;
-}

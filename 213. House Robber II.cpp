@@ -1,25 +1,30 @@
-class Solution {
+#include <bits/stdc++.h>
+using namespace std;
+class Solution
+{
 public:
-    int findans(int n,vector<int> &v){
-        if(n == 0){
-            return v[0];
-        }
-        int prepre = v[0];
-        int pre = max(v[0],v[1]);
-        for(int i=2;i<=n;i++){
-            int ctr = max(pre,prepre+v[i]);
-            prepre = pre;
-            pre = ctr;
+    int rob1(vector<int> &v, int length, int chk)
+    {
+        int pre = v[chk];
+        int pre2 = 0;
+        for (int i = 1 + chk; i < length; i++)
+        {
+            int left = v[i];
+            if (i > 1)
+                left += pre2;
+            int right = pre;
+            int ctrMAX = max(left, right);
+            pre2 = pre;
+            pre = ctrMAX;
         }
         return pre;
     }
-    int rob(vector<int>& v) {
-        if(v.size() == 1)return {v[0]};
-        vector<int> t1 ,t2;
-        for(int i=0;i<v.size();i++){
-            if(i != 0)t1.push_back(v[i]);
-            if(i != v.size()-1)t2.push_back(v[i]);
-        }
-        return max( findans(t1.size()-1,t1) ,findans(t2.size()-1,t2)   );
+    int rob(vector<int> &v)
+    {
+        if (v.size() == 1)
+            return v[0];
+        int r1 = rob1(v, v.size() - 1, 0);
+        int r2 = rob1(v, v.size(), 1);
+        return max(r1, r2);
     }
 };

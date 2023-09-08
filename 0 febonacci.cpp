@@ -47,17 +47,17 @@ int main()
 {
     int n;cin >> n;
     //-------------------------------------   1   -------------------------------------------
-    // cout << febonacci1(n); // tc -> O(2^n) sc -> O(n)
+    // cout << febonacci1(n); // tc -> O(2^n) sc -> O(n) -> pure recursion
 
     //-------------------------------------   2   -------------------------------------------
     // vector<int> dp(n + 1, -1);
-    // cout << febonacci2(n, dp); // tc -> O(n) sc -> O(n) + O(n) {stack space + dp vector space}
+    // cout << febonacci2(n, dp); // tc -> O(n) sc -> O(n) + O(n) {stack space + dp vector space} -> memoization
 
     //-------------------------------------   3   -------------------------------------------
     // vector<int> dp(n + 1, -1);
-    // cout << febonacci3(n, dp); // tc -> O(n) sc -> O(n) {dp vector space}
+    // cout << febonacci3(n, dp); // tc -> O(n) sc -> O(n) {dp vector space} -> tabulation
 
     //-------------------------------------   4   -------------------------------------------
-    cout << febonacci4(n); // tc -> O(n) sc -> O(1) -> the best way
+    cout << febonacci4(n); // tc -> O(n) sc -> O(1) -> the best way(space optimized)
     return 0;
 }
