@@ -80,6 +80,7 @@ int findans(int n, vector<vector<int>> &v, int pre, vector<vector<int>> &dp){
     return dp[n][pre] =  max(possibility3, max(possibility2, possibility1));
 }
 */
+//------------------------------ tabulation ---------------------------------------------
 int ninjaTraining(int n, vector<vector<int>> &v){
     vector<vector<int>> dp(1 + n, vector<int>(4, 0));
     for (int i = 1; i <= n; i++){
@@ -95,17 +96,13 @@ int ninjaTraining(int n, vector<vector<int>> &v){
     }
     return max(dp[n][1], max(dp[n][2], dp[n][3]));
 }
-void solve()
-{
-    int n;
-    cin >> n;
+void solve(){
+    int n;cin >> n;
     vector<vector<int>> v;
     int x;
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++){
         vector<int> help;
-        for (int j = 0; j < 3; j++)
-        {
+        for (int j = 0; j < 3; j++){
             cin >> x;
             help.push_back(x);
         }
@@ -113,13 +110,8 @@ void solve()
     }
     cout << ninjaTraining(n, v) << endl;
 }
-int main()
-{
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+int main(){
+    int t;cin >> t;
+    while (t--)solve();
     return 0;
 }
