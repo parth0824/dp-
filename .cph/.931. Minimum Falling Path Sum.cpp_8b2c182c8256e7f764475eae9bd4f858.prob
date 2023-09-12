@@ -1,0 +1,1 @@
+{"name":"Local: 931","url":"f:\\dp\\931. Minimum Falling Path Sum.cpp","tests":[{"id":1694431349675,"input":"3 \n2 1 3\n6 5 4\n7 8 9","output":""},{"id":1694433504327,"input":"2\n-19 57 \n-40 -5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\931. Minimum Falling Path Sum.cpp","group":"local","local":true}

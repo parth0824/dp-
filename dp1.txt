@@ -29,3 +29,9 @@ now write recursive code and then convert it to dp by the steps below
 1 -> try to represent the problem in to a index
 2 -> do all possible steps on that index according to the problem
 3 -> if problem says count all the ways then sum all the staf , if problem says find min then find the min form the dp array
+
+
+
+
+diff dp pattens -> dp on grid
+                -> 
