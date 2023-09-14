@@ -33,5 +33,6 @@ now write recursive code and then convert it to dp by the steps below
 
 
 
-diff dp pattens -> dp on grid
+diff dp pattens -> one dp and dp on grid
+                -> dp on Subsequences or subset
                 -> 
