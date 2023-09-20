@@ -1,0 +1,1 @@
+{"name":"Local: 560","url":"f:\\dp\\560. Subarray Sum Equals K.cpp","tests":[{"id":1694765537077,"input":"3\n1 1 1\n2","output":"2"},{"id":1694765555696,"input":"3\n1 2 3\n3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\560. Subarray Sum Equals K.cpp","group":"local","local":true}
