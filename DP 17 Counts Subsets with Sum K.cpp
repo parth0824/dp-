@@ -28,12 +28,18 @@ using namespace std;
 
 
 ll int findans(int i,int k,vector<int> &v,vector<vi> &dp){
-    if(k == 0){
-        return 1;
+    if (i == 0) // to handle 0 case if v[i] == 0
+    {
+        if(k == 0 && v[0] == 0)return 2;
+        if(k == 0 || v[0] == k)return 1;
+        return 0;
     }
-    if(i == 0){
-        return v[0] == k;
-    }
+    // if(k == 0){
+    //     return 1;
+    // }
+    // if(i == 0){
+    //     return v[0] == k;
+    // }
     if(dp[i][k] != -1){
         return dp[i][k];
     }

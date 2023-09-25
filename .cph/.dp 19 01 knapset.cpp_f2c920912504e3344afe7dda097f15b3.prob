@@ -1,0 +1,1 @@
+{"name":"Local: dp 19 01 knapset","url":"f:\\dp\\dp 19 01 knapset.cpp","tests":[{"id":1695641116437,"input":"4\n1 2 4 5\n5 4 8 6\n5","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 19 01 knapset.cpp","group":"local","local":true}
