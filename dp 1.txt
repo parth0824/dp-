@@ -33,6 +33,29 @@ now write recursive code and then convert it to dp by the steps below
 
 
 
-diff dp pattens -> one dp and dp on grid
-                -> dp on Subsequences or subset
-                -> 
+diff dp pattens -> one dp and dp on grid(1-13)
+                -> dp on Subsequences or subset(14-)
+                    1 -> express the problem in index and target (index,target)  // thum rule
+                    2 -> explore the possibility on the index (array of index is a part of subsequence or not a part of subsequence)
+                    3 -> find the answer
+
+                    pseudo code
+                        bool f(int index,int target){
+                            if(target == 0){
+                                return true;
+                            }
+                            if(index == 0){
+                                if(arr[index] == target){
+                                    return true;
+                                }
+                                return false;
+                            }
+                            int take = 0,nottake = 0;
+                            if(arr[index] <= target){
+                                take = f(index-1,target-arr[index]); // take
+                            }
+                            nottake = f(index-1,target); // not take
+                            return take or nottake;
+                        }
+
+                        f(5,6) // fun call
