@@ -1,0 +1,1 @@
+{"name":"Local: dp 25 longest common subsequence","url":"f:\\dp\\dp 25 longest common subsequence.cpp","tests":[{"id":1696153368438,"input":"adebc dcadb","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 25 longest common subsequence.cpp","group":"local","local":true}

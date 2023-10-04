@@ -34,7 +34,7 @@ now write recursive code and then convert it to dp by the steps below
 
 
 diff dp pattens -> one dp and dp on grid(1-13)
-                -> dp on Subsequences or subset(14-)
+                -> dp on Subsequences or subset(14-24)
                     1 -> express the problem in index and target (index,target)  // thum rule
                     2 -> explore the possibility on the index (array of index is a part of subsequence or not a part of subsequence)
                     3 -> find the answer
@@ -59,3 +59,12 @@ diff dp pattens -> one dp and dp on grid(1-13)
                         }
 
                         f(5,6) // fun call
+                -> dp on string LCS(longest common subsequence)(25-)
+                subsequence example -> abc -> a, ab, ac, abc, b, bc, c, "". total -> 8
+                    |
+                    |
+                  ----
+                  \  /
+                   \/
+                   maintains the order int hte string
+                

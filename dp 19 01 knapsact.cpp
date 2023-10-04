@@ -7,7 +7,7 @@ using namespace std;
 #define ll long long
 #define MOD 1000000007
 
-// tabulation
+// memoization
 int findknapsack(vector<int> w, vector<int> v, int i, int mw, vector<vi> &dp){
     if (i == 0){
         if (w[0] <= mw)return v[0];
@@ -19,7 +19,7 @@ int findknapsack(vector<int> w, vector<int> v, int i, int mw, vector<vi> &dp){
     nottake = findknapsack(w, v, i - 1, mw, dp);
     return dp[i][mw] = (max(take, nottake)) % MOD;
 }
-// memoization
+// tabulation
 int knapsack(vector<int> w, vector<int> v, int n, int mw){ 
     vector<vector<int>> dp(n, vector<int>(mw + 1, 0)); 
     for(int i=w[0];i<=mw;i++)dp[0][i] = v[0];
@@ -33,7 +33,6 @@ int knapsack(vector<int> w, vector<int> v, int n, int mw){
     } 
     return dp[n-1][mw];
 }
-
 // space optimize
 int knapsack(vector<int> w, vector<int> v, int n, int mw){  
     vector<int> pre(mw+1,0),ctr(mw+1,0);

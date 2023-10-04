@@ -24,7 +24,7 @@ int countPartitions(int n, int d, vector<int> &v) // just find the all the subse
     // s1+s2 = s
     // s1-s2 = d
     // s1+(s1-d) = s
-    // s1=(s+d)/2 -> find (tsum+d)/2;
+    // s1=(s+d)/2 -> find (total sum + difference)/2;
     int tsum = accumulate(v.begin(), v.end(), 0);
     if((tsum+d) % 2 != 0 )return 0;
     int t = (tsum + d) / 2;
