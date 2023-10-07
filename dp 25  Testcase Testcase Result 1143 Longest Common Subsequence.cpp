@@ -1,7 +1,7 @@
 // brute force is exponential TLE
 #include <bits/stdc++.h>
 using namespace std;
-
+/*
 // ---------------------------- recursive tle ------------------------------
 int findans(string &a, string &b, int i, int j)
 {
@@ -23,7 +23,7 @@ int longestCommonSubsequence(string a, string b)
 {
     return findans(a, b, a.size() - 1, b.size() - 1);
 }
-
+*/
 /*
 // ---------------------------- memoization ------------------------------
 int findans(string &a, string &b, int i, int j, vector<vector<int>> &dp)
@@ -51,8 +51,8 @@ int longestCommonSubsequence(string a, string b)
     return findans(a, b, a.size(), b.size(), dp);
 }
 */
-int longestCommosnSubsequence(string a, string b)
-{
+int longestCommonSubsequence(string a, string b)
+{ 
     vector<vector<int>> dp(a.size() + 1, vector<int>(b.size() + 1, 0)); // dp[a.size()-1][b.size()-1]
     for (int i = 0; i < b.size(); i++)
     {
@@ -75,22 +75,7 @@ int longestCommosnSubsequence(string a, string b)
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]); // findans(a, b, i - 1, j, dp), findans(a, b, i, j - 1, dp));
             }
         }
-    }
-    // actual subsequence answer
-    int m = 0;
-    string s = "";
-    for (int i = 0; i < dp.size(); i++)
-    {
-        for (int j = 0; j < dp[0].size(); j++)
-        {
-            if (m < dp[i][j])
-            {
-                s += a[i - 1];
-                m = dp[i][j];
-            }
-        }
-    }
-    cout << s << endl;
+    } 
     return dp[a.size()][b.size()];
 }
 int main()

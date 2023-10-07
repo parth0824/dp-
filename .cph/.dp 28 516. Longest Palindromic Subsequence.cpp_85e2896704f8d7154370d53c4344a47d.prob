@@ -1,0 +1,1 @@
+{"name":"Local: dp 28 516","url":"f:\\dp\\dp 28 516. Longest Palindromic Subsequence.cpp","tests":[{"id":1696598087017,"input":"bbbab","output":"4"},{"id":1696598234956,"input":"cbbd","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 28 516. Longest Palindromic Subsequence.cpp","group":"local","local":true}

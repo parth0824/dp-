@@ -1,0 +1,1 @@
+{"name":"Local: dp 31 1092","url":"f:\\dp\\dp 31 1092. Shortest Common Supersequence .cpp","tests":[{"id":1696661577023,"input":"abac cab","output":"cabac"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 31 1092. Shortest Common Supersequence .cpp","group":"local","local":true}

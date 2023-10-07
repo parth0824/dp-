@@ -1,0 +1,1 @@
+{"name":"Local: dp 32 115","url":"f:\\dp\\dp 32 115. Distinct Subsequences.cpp","tests":[{"id":1696668672252,"input":"rabbbit rabbit","output":"3"},{"id":1696668691479,"input":"babgbag bag","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 32 115. Distinct Subsequences.cpp","group":"local","local":true}
