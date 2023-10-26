@@ -59,7 +59,7 @@ diff dp pattens -> one dp and dp on grid(1-13)
                         }
 
                         f(5,6) // fun call
-                -> dp on string LCS(longest common subsequence)(25-)
+                -> dp on string LCS(longest common subsequence)(25-34)
                 subsequence example -> abc -> a, ab, ac, abc, b, bc, c, "". total -> 8
                     |
                     |
@@ -67,4 +67,6 @@ diff dp pattens -> one dp and dp on grid(1-13)
                   \  /
                    \/
                    maintains the order int hte string
+                -> dp on stocks(35-40)
+                -> dp on longest increasing subsequence(41-)
                 

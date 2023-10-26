@@ -1,0 +1,1 @@
+{"name":"Local: dp 33 72","url":"f:\\dp\\dp 33 72. Edit Distance.cpp","tests":[{"id":1696825893833,"input":"horse ros","output":"3"},{"id":1696825941683,"input":"intention execution","output":"5"},{"id":1696833145277,"input":"a b","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 33 72. Edit Distance.cpp","group":"local","local":true}

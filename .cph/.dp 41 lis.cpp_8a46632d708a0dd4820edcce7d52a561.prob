@@ -1,0 +1,1 @@
+{"name":"Local: dp 41 lis","url":"f:\\dp\\dp 41 lis.cpp","tests":[{"id":1697092819215,"input":"6\n0 1 0 3 2 3","output":"4"},{"id":1697966360454,"input":"3\n3 3 3","output":""},{"id":1697966375832,"input":"8\n10 9 2 5 3 7 101 18","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\dp\\dp 41 lis.cpp","group":"local","local":true}
